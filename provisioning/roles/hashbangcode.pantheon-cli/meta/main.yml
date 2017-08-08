@@ -1,0 +1,21 @@
+---
+
+dependencies: []
+
+galaxy_info:
+  author: danbohea
+  description: Pantheon CLI
+  license: MIT
+  min_ansible_version: 1.9
+  platforms:
+  - name: Ubuntu
+    versions:
+    - trusty
+  galaxy_tags:
+    - cli
+    - development
+    - drupal
+    - pantheon
+    - terminus
+    - web
+    - wordpress

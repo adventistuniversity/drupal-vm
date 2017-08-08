@@ -1,0 +1,39 @@
+
+---
+language: python
+python: "2.7"
+dist: trusty
+sudo: required
+
+# Install ansible
+addons:
+  apt:
+    packages:
+    - python-pip
+
+install:
+  # Install ansible
+  - pip install -q ansible
+  # Check ansible version
+  - ansible --version
+  # Create ansible.cfg with correct roles_path
+  - printf '[defaults]\nroles_path=../' >ansible.cfg
+
+script:
+  # Syntax check
+  - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
+  # Run test playbook
+  - ansible-playbook tests/test.yml -i tests/inventory --connection=local
+  # Run Terminus
+  - terminus cli info
+  # Idempotence test (run test playbook again & check output)
+  - >
+    ansible-playbook tests/test.yml -i tests/inventory --connection=local
+    | grep -q 'changed=0.*failed=0'
+    && (echo 'Idempotence test: pass' && exit 0)
+    || (echo 'Idempotence test: fail' && exit 1)
+  # Run Terminus again
+  - terminus cli info
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
