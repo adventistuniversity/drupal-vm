@@ -4,7 +4,7 @@
 
 1. Install [Vagrant](https://www.vagrantup.com/downloads.html) and [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 1. Download or clone this repo
-1. Open `config.yml` and make the following modifications:
+1. Copy `default.config.yml` to `config.yml` and make the following modifications:
     * You can set the `vagrant_hostname`, `vagrant_machine_name`, and `vagrant_ip` to whatever you like, which is useful if you are making multiple boxes for multiple sites
     * Point `local_path` to your local copy of a Pantheon site repo
     * You can change `destination` if you want, it's the path that will be on the Vagrant box

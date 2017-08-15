@@ -10,7 +10,7 @@
 vagrant_box: geerlingguy/ubuntu1604
 
 vagrant_user: vagrant
-vagrant_synced_folder_default_type: nfs
+vagrant_synced_folder_default_type: ""
 vagrant_gui: false
 
 # If you need to run multiple instances of Drupal VM, set a unique hostname,
@@ -33,7 +33,7 @@ vagrant_synced_folders:
   # the drupal-vm folder.
   - local_path: .
     destination: /var/www/drupalvm
-    type: nfs
+    type: ""
     create: true
 
 # Memory and CPU to use for this VM.
@@ -53,7 +53,7 @@ drupalvm_ansible_version_min: '2.2'
 force_ansible_local: false
 
 # The web server software to use. Can be either 'apache' or 'nginx'.
-drupalvm_webserver: apache
+drupalvm_webserver: nginx
 
 # The database system to use. Can be either 'mysql' or 'pgsql'.
 drupal_db_backend: mysql
@@ -74,13 +74,13 @@ drupal_composer_dependencies:
 
 # Set this to 'true' and 'build_makefile', 'build_composer' to 'false' if you
 # are using Composer's create-project as a site deployment strategy.
-drupal_build_composer_project: true
+drupal_build_composer_project: false
 drupal_composer_project_package: "drupal-composer/drupal-project:8.x-dev"
 drupal_composer_project_options: "--prefer-dist --stability dev --no-interaction"
 
 # Set this to 'false' if you don't need to install drupal (using the drupal_*
 # settings below), but instead copy down a database (e.g. using drush sql-sync).
-drupal_install_site: true
+drupal_install_site: false
 
 # Required Drupal settings.
 drupal_core_path: "{{ drupal_composer_install_dir }}/web"
