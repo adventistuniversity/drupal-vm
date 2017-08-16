@@ -18,7 +18,7 @@
     * Create a new backup if needed: `terminus backup:create` _[site]`.`[environment]_ `--element=db`
     * Download the database backup: `curl -o mydb.sql.gz "$(terminus backup:get` _[site]`.`[environment]_ `--element=db)"`
     * Create a database in MySQL
-    * Unzip the database backup into the database you just created: `gunzip < mydb.sql.gz | mysql -uroot -proot` _[adtabase name]_
+    * Unzip the database backup into the database you just created: `gunzip < mydb.sql.gz | mysql -uroot -proot` _[database name]_
     * Clean up the database backup files
 1. If you're not using the vagrant-hostsupdater or vagrant-hostmanager plugins, go to the `vagrant_ip` in your browser (192.168.88.88 by default) and use the directions in the upper right corner to add the right info to your hosts file (`C:\Windows\System32\drivers\etc\hosts` on Windows - must open editor as admin)
 1. Go to the `vagrant_hostname` in your browser to see the site! :sunglasses::+1:
