@@ -2,7 +2,7 @@
 
 ## Setup
 
-1. Install [Vagrant](https://www.vagrantup.com/downloads.html) and [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+1. Install [Vagrant](https://www.vagrantup.com/downloads.html) and [VirtualBox 5.1.26](http://download.virtualbox.org/virtualbox/5.1.26/) (newer versions do not yet work with folder sync)
 1. Download or clone this repo
 1. Copy `default.config.yml` to `config.yml` and make the following modifications:
     * You can set the `vagrant_hostname`, `vagrant_machine_name`, and `vagrant_ip` to whatever you like, which is useful if you are making multiple boxes for multiple sites
